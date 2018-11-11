@@ -1,0 +1,35 @@
+form {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  padding: 10px 10px;
+  margin: 5px 0;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form button {
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  height: 35px;
+  margin-top: 10px;
+}
+
+form button :disabled {
+  background-color: red;
+}
+
+form button :enabled {
+  background-color: #84c00c;
+}
