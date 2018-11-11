@@ -1,10 +1,14 @@
 import React from 'react';
 
 class UserForm extends React.Component {
-
+  onFormSubmit = event => {
+    event.preventDefault();
+    this.props.onSubmit();
+  }
   render() {
+    const isEnabledBtn = this.props.name.length && this.props.email.length;
     return (
-      <form>
+      <form onSubmit={this.onFormSubmit}>
         <input
           type='text'
           name='name'
@@ -13,16 +17,17 @@ class UserForm extends React.Component {
           onChange={this.props.onChange}
         />
         <input
-          type='text'
+          type='email'
           name='email'
           placeholder='Enter email'
           value={this.props.email}
           onChange={this.props.onChange}
         />
         <button
-          type='button'
-          value='Next'
-        />
+          disabled={!isEnabledBtn}
+        >
+        Next
+        </button>
       </form>
     );
   }

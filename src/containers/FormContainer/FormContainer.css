@@ -23,13 +23,10 @@ form button {
   border: none;
   font-size: 16px;
   height: 35px;
+  width: 200px;
   margin-top: 10px;
 }
 
-form button :disabled {
-  background-color: red;
-}
-
-form button :enabled {
+form button:enabled {
   background-color: #84c00c;
 }

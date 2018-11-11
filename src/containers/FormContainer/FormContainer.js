@@ -20,6 +20,7 @@ class FormContainer extends React.Component {
         name={this.state.name}
         email={this.state.email}
         onChange={this.onFieldChange}
+        onSubmit={this.goNextStep}
       />
     );
   }
@@ -28,6 +29,7 @@ class FormContainer extends React.Component {
     if (this.state.step === NUMBER_OF_STEPS) {
       console.log('Submit...');
     } else {
+      console.log('next form...');
       this.setState({
         step: this.state.step + 1
       });
