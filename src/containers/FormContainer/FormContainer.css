@@ -27,6 +27,19 @@ form button {
   margin-top: 10px;
 }
 
+form select {
+  width: 222px;
+  border-radius: 3px;
+  font-size: 16px;
+  height: 45px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
 form button:enabled {
   background-color: #84c00c;
+}
+
+span {
+  margin-bottom: 10px;
 }

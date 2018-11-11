@@ -9,6 +9,8 @@ class UserForm extends React.Component {
     const isEnabledBtn = this.props.name.length && this.props.email.length;
     return (
       <form onSubmit={this.onFormSubmit}>
+        <h2>{this.props.formName}</h2>
+        <span>Step {this.props.step} of {this.props.finalStep}</span>
         <input
           type='text'
           name='name'
