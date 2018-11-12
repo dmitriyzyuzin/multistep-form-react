@@ -3,6 +3,7 @@ import React from 'react';
 import './FormContainer.css';
 import UserForm from '../../components/UserForm';
 import AddressForm from '../../components/AddressForm';
+import AdditionalInfoForm from '../../components/AdditionalInfoForm';
 
 class FormContainer extends React.Component {
   state = {
@@ -13,6 +14,8 @@ class FormContainer extends React.Component {
     street: '',
     building: '',
     postalCode: '',
+    position: '',
+    company: '',
     citiesArr: []
   }
   NUMBER_OF_STEPS = 3
@@ -50,11 +53,24 @@ class FormContainer extends React.Component {
       />
     );
   }
+  getAdditionalInfoForm = () => {
+    return (
+      <AdditionalInfoForm
+        formName='Additional Info Form'
+        company={this.state.company}
+        position={this.state.position}
+        step={this.state.step}
+        finalStep={this.NUMBER_OF_STEPS}
+        onChange={this.onFieldChange}
+        onSubmit={this.goNextStep}
+      />
+    );
+  }
   goNextStep = () => {
     if (this.state.step === this.NUMBER_OF_STEPS) {
-      console.log('Submit...');
+      alert('Submit forms...');
+      console.log('Data: ', this.state)
     } else {
-      console.log('next form...');
       this.setState({
         step: this.state.step + 1
       });
@@ -66,6 +82,8 @@ class FormContainer extends React.Component {
         return this.getUserInfoForm();
       case 2:
         return this.getAddressForm();
+      case 3:
+        return this.getAdditionalInfoForm();
       default:
         return this.getUserInfoForm();
     }
@@ -82,7 +100,6 @@ class FormContainer extends React.Component {
     });
   }
   render() {
-    console.log('State is: ', this.state);
     return (
       <div>
         {
